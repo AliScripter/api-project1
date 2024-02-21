@@ -6,9 +6,11 @@ const countryEl = document.querySelector(`input[type = text]`);
 const btn = document.querySelector(`input[type = button]`);
 let fragment = document.createDocumentFragment();
 let table = document.querySelector('table');
+let disclaimerEl = document.querySelector('.Disclaimer');
 
 function makeDomFn(data, callback) {
   callback();
+
   fragment = table.insertAdjacentHTML(
     'afterbegin',
     `<tr>
@@ -28,11 +30,16 @@ function makeDomFn(data, callback) {
     <td>${data[0].timezones[0]}</td>
   </tr>`
   );
+  disclaimerEl.insertAdjacentHTML(
+    'afterbegin',
+    `<h3>Disclaimer: Some information may be incomplete. For example, some countries have several different time zones.</h3>`
+  );
 }
 
 function clearFirst() {
-  table.innerHTML = null;
-  countryEl.value = null;
+  table.innerHTML = '';
+  countryEl.value = '';
+  disclaimerEl.innerHTML = '';
 }
 
 function getDataFromAPI() {
@@ -49,7 +56,7 @@ function getDataFromAPI() {
     })
     .catch(err => {
       console.log(err);
-      document.body.insertAdjacentHTML(
+      disclaimerEl.insertAdjacentHTML(
         'beforeend',
         `<h3 class='red'>Your country in NOT Valid ! Try Again :)</h3>`
       );

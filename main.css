@@ -70,3 +70,8 @@ td {
 th {
   text-transform: capitalize;
 }
+
+div>h3{
+  text-align: center;
+  text-transform: capitalize;
+}
