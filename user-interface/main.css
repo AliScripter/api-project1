@@ -1,0 +1,280 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --green: #163020;
+  --green2: #304d30;
+
+  --white1: #b6c4b6;
+  --white2: #eef0e5;
+}
+
+svg {
+  font-size: 30px;
+  width: 30px;
+  cursor: pointer;
+  margin: 12px;
+}
+
+.header {
+  background-color: var(--white1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  height: 80px;
+  padding: 12px;
+
+  h2 {
+    display: inline;
+    margin: 12px;
+  }
+  div {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.settings {
+  display: none;
+  background-color: var(--green);
+  color: var(--white1);
+  width: 200px;
+  margin: 2px 24px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+li {
+  width: 100%;
+}
+
+ul,
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px 0;
+  text-align: start;
+}
+
+li > ul > li {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ul > li > ul {
+  display: none;
+  position: absolute; /* Added */
+  top: 4px; /* Added */
+  left: 100%; /* Added */
+  background-color: var(--green2); /* Adjusted */
+  border-radius: 30px; /* Adjusted */
+}
+
+ul > li:hover {
+  color: var(--white1);
+  width: 100%;
+}
+
+ul > li:hover ul {
+  display: block;
+  padding: 12px;
+  text-align: center;
+}
+
+ul > li > ul li:hover {
+  color: red;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer {
+  height: 400px;
+}
+
+/**----- Empty Div */
+
+.empty-show {
+  text-align: center;
+  text-transform: capitalize;
+  img {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/*!------- Overlay  */
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+/*!------- FORM  */
+
+.formDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+
+  width: 600px;
+  margin: auto;
+  border-radius: 20px;
+  svg {
+    color: red;
+  }
+}
+
+form div {
+  padding: 10px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label {
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.form-btns {
+  justify-content: space-evenly;
+  margin: 12px 0;
+
+  .btn-form {
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    /* border: 0;
+    outline: 0; */
+  }
+}
+
+form * {
+  border: 0;
+  outline: 0;
+}
+form {
+  box-shadow: 0px 0px 50px 30px var(--green);
+  border-radius: 24px;
+}
+form input {
+  background-color: var(--green2);
+  color: var(--white2);
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+button[type='submit'] {
+  background-color: var(--green2);
+  opacity: 0.8;
+  color: var(--white2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+button[type='reset'] {
+  background-color: red;
+  color: var(--white2);
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+#total-Product {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.noAllow {
+  cursor: not-allowed;
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+/*!----- Reset Window */
+#Reset-window {
+  width: 400px;
+  margin: auto;
+  border-radius: 16px;
+  background-color: var(--green2);
+  padding: 12px;
+}
+
+#Reset-window h4 {
+  margin: 0 0 10px 0;
+  color: var(--white2);
+}
+
+#Reset-window div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#Reset-window button {
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#Reset-window .yes {
+  background-color: red;
+  opacity: 0.8;
+  color: var(--white2);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+#Reset-window .no {
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
