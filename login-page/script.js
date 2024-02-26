@@ -84,6 +84,7 @@ const addUserInServer = () => {
       email: createEmailEl.value,
       password: createPassEl.value,
     };
+
     fetch(api, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
@@ -96,6 +97,8 @@ const addUserInServer = () => {
         clearForm(createNameEl, createEmailEl, createPassEl);
         setTimeout(() => {
           messageEl.style.display = 'none';
+          window.location.href =
+            'http://127.0.0.1:5500/user-interface/index.html';
         }, 3e3);
       })
       .catch(err => console.log(err))
@@ -152,8 +155,10 @@ const checkUserInDatas2 = usersObjSignIn => {
     messageEl.innerHTML = `Successfully login`;
     messageEl.style.display = 'block';
     clearForm(loginEmailEl, loginPassEl);
+
     setTimeout(() => {
       messageEl.style.display = 'none';
+      window.location.href = 'http://127.0.0.1:5500/user-interface/index.html';
     }, 3e3);
   } else {
     // console.log(`الان باید کاربر رو ثبتنام کنی`);

@@ -7,7 +7,6 @@
     <title>User Panel</title>
   </head>
   <body>
-    <div id="overlay"></div>
     <div class="header">
       <div>
         <h2>username</h2>
@@ -74,20 +73,20 @@
         <li class="title">
           Colors Palet
           <ul>
-            <li>Green</li>
-            <li>Blue</li>
-            <li>Orange</li>
-            <li>red</li>
+            <li class="color-palet" data-color="Green">Green</li>
+            <li class="color-palet" data-color="Blue">Blue</li>
+            <li class="color-palet" data-color="Orange">Orange</li>
+            <li class="color-palet" data-color="Red">Red</li>
           </ul>
         </li>
 
         <li class="title">
           Fonts
           <ul>
-            <li>Vazir</li>
-            <li>serif</li>
-            <li>sans-serif</li>
-            <li>monospace</li>
+            <li class="li-font" data-font="Vazir">Vazir</li>
+            <li class="li-font" data-font="serif">serif</li>
+            <li class="li-font" data-font="sans-serif">sans-serif</li>
+            <li class="li-font" data-font="monospace">monospace</li>
           </ul>
         </li>
         <li class="title">
@@ -101,6 +100,7 @@
                 stroke-width="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
+                id="moon-icon"
               >
                 <path
                   stroke-linecap="round"
@@ -118,6 +118,7 @@
                 stroke-width="1.5"
                 stroke="currentColor"
                 class="w-6 h-6"
+                id="sun-icon"
               >
                 <path
                   stroke-linecap="round"
@@ -128,7 +129,7 @@
             </li>
           </ul>
         </li>
-        <li class="title">
+        <li class="title" id="log-out-icon">
           <div class="flex">
             Log Out
             <svg
@@ -152,8 +153,12 @@
 
     <div class="empty-show">
       <h2>The product list is empty . Add something!</h2>
-      <img src="/img/No data-cuate.png" alt="add" />
-      <img src="/img/Add files-rafiki.png" alt="add" />
+      <img src="/img/No-data-cuate-green.png" alt="add" class="changer-img" />
+      <img
+        src="/img/Add-files-rafiki-green.png"
+        alt="add"
+        class="changer-img"
+      />
     </div>
 
     <!-- ! Form ------- -->
@@ -200,17 +205,44 @@
       </form>
     </div>
 
-    <hr />
-
     <!-- !----- Reset Window -->
     <div id="Reset-window">
-      <h4>Are you sure about resetting the form information?</h4>
+      <h4 class="message-Window">
+        Are you sure about resetting the form information?
+      </h4>
       <div>
         <button class="yes">Yes</button>
         <button class="no">No</button>
       </div>
     </div>
 
+    <!--! ---- Product List  -->
+
+    <table>
+      <tr>
+        <th>row</th>
+        <th>name</th>
+        <th>model</th>
+        <th>fi</th>
+        <th>count</th>
+        <th>total price</th>
+        <th colspan="3">action</th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>S24</td>
+        <td>2024</td>
+        <td>70_000_000</td>
+        <td>10</td>
+        <td>700_000_000</td>
+        <td id="btn-delete-tab">Delete</td>
+        <td id="btn-edit-tab">Edit</td>
+        <td id="btn-sell-tab">Sell</td>
+      </tr>
+    </table>
+
+    <div id="overlay"></div>
     <footer></footer>
     <script src="main.js"></script>
   </body>
