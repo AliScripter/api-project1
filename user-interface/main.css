@@ -172,7 +172,7 @@ footer {
   /* height: 100vh; */
 
   width: 600px;
-  margin: auto;
+  margin: 3rem auto;
   border-radius: 20px;
   svg {
     color: red;
