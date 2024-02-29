@@ -310,7 +310,7 @@ table {
   width: 100%;
   padding: 12px;
   margin: 4px auto;
-  display: none;
+  display: block;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
